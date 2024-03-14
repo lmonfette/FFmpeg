@@ -3,6 +3,10 @@ project "ffmpeg"
     language "C"
     staticruntime "on"
 
+    os.execute("./configure")
+    os.execute("make")
+    os.execute("sudo make install")
+
     includedirs { "." }
     
     -- libavutil
