@@ -3,9 +3,7 @@ project "ffmpeg"
     language "C"
     staticruntime "on"
 
-    os.execute("./configure")
-    os.execute("make")
-    os.execute("sudo make install")
+    print("Please running the command: \"./configure && make && sudo make instal\" before compiling FFmpeg")
 
     includedirs { "." }
     
