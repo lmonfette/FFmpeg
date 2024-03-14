@@ -30,60 +30,60 @@ project "ffmpeg"
         "libavformat/*.asm"
     }
     
-    filter "architecture:x86"
+    filter "architecture:x86_64"
         -- libavutil
         files {
-            "libavutil/x86/*.h",
-            "libavutil/x86/*.c",
-            "libavutil/x86/*.cpp",
-            "libavutil/x86/*.S",
-            "libavutil/x86/*.asm"
+            "libavutil/x86_64/*.h",
+            "libavutil/x86_64/*.c",
+            "libavutil/x86_64/*.cpp",
+            "libavutil/x86_64/*.S",
+            "libavutil/x86_64/*.asm"
         }
 
         -- libavcodec
         files {
-            "libavcodec/x86/*.h",
-            "libavcodec/x86/*.c",
-            "libavcodec/x86/*.cpp",
-            "libavcodec/x86/*.S",
-            "libavcodec/x86/*.asm"
+            "libavcodec/x86_64/*.h",
+            "libavcodec/x86_64/*.c",
+            "libavcodec/x86_64/*.cpp",
+            "libavcodec/x86_64/*.S",
+            "libavcodec/x86_64/*.asm"
         }
 
         -- libavformat
         files {
-            "libavformat/x86/*.h",
-            "libavformat/x86/*.c",
-            "libavformat/x86/*.cpp",
-            "libavformat/x86/*.S",
-            "libavformat/x86/*.asm"
+            "libavformat/x86_64/*.h",
+            "libavformat/x86_64/*.c",
+            "libavformat/x86_64/*.cpp",
+            "libavformat/x86_64/*.S",
+            "libavformat/x86_64/*.asm"
         }
 
-    filter "architecture:ARM"
+    filter "architecture:ARM64"
         -- libavutil
         files {
-            "libavutil/ARM/*.h",
-            "libavutil/ARM/*.c",
-            "libavutil/ARM/*.cpp",
-            "libavutil/ARM/*.S",
-            "libavutil/ARM/*.asm"
+            "libavutil/ARM64/*.h",
+            "libavutil/ARM64/*.c",
+            "libavutil/ARM64/*.cpp",
+            "libavutil/ARM64/*.S",
+            "libavutil/ARM64/*.asm"
         }
 
         -- libavcodec
         files {
-            "libavcodec/ARM/*.h",
-            "libavcodec/ARM/*.c",
-            "libavcodec/ARM/*.cpp",
-            "libavcodec/ARM/*.S",
-            "libavcodec/ARM/*.asm"
+            "libavcodec/ARM64/*.h",
+            "libavcodec/ARM64/*.c",
+            "libavcodec/ARM64/*.cpp",
+            "libavcodec/ARM64/*.S",
+            "libavcodec/ARM64/*.asm"
         }
 
         -- libavformat
         files {
-            "libavformat/ARM/*.h",
-            "libavformat/ARM/*.c",
-            "libavformat/ARM/*.cpp",
-            "libavformat/ARM/*.S",
-            "libavformat/ARM/*.asm"
+            "libavformat/ARM64/*.h",
+            "libavformat/ARM64/*.c",
+            "libavformat/ARM64/*.cpp",
+            "libavformat/ARM64/*.S",
+            "libavformat/ARM64/*.asm"
         }
 
     filter "architecture:aarch64"
