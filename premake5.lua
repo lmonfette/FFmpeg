@@ -2,6 +2,8 @@ project "ffmpeg"
     kind "StaticLib" -- Static library project
     language "C"
     staticruntime "on"
+
+    includedirs { "." }
     
     -- libavutil
     files {
