@@ -3,9 +3,41 @@ project "ffmpeg"
     language "C"
     staticruntime "on"
 
-    print("Please running the command: \"./configure && make && sudo make instal\" before compiling FFmpeg")
+    print("Please run the command: \"./configure && make && sudo make install\" before compiling FFmpeg")
 
-    includedirs { "." }
+    includedirs {"."}
+
+    filter "system:windows"
+        architecture "x86_64"
+
+    filter "system:linux"
+        architecture "x86_64"
+
+    filter "system:macosx"
+        architecture "ARM64"
+
+    files {
+        "*.h",
+        "*.c"
+    }
+        
+    -- libavformat
+    files {
+        "libavformat/*.h",
+        "libavformat/*.c",
+        "libavformat/*.cpp",
+        "libavformat/*.S",
+        "libavformat/*.asm"
+    }
+    
+    -- libavcodec
+    files {
+        "libavcodec/*.h",
+        "libavcodec/*.c",
+        "libavcodec/*.cpp",
+        "libavcodec/*.S",
+        "libavcodec/*.asm"
+    }
     
     -- libavutil
     files {
@@ -16,78 +48,60 @@ project "ffmpeg"
         "libavutil/*.asm"
     }
 
-    -- libavcodec
-    files {
-        "libavcodec/*.h",
-        "libavcodec/*.c",
-        "libavcodec/*.cpp",
-        "libavcodec/*.S",
-        "libavcodec/*.asm"
-    }
-
-    -- libavformat
-    files {
-        "libavformat/*.h",
-        "libavformat/*.c",
-        "libavformat/*.cpp",
-        "libavformat/*.S",
-        "libavformat/*.asm"
-    }
-    
     filter "architecture:x86_64"
         -- libavutil
         files {
-            "libavutil/x86_64/*.h",
-            "libavutil/x86_64/*.c",
-            "libavutil/x86_64/*.cpp",
-            "libavutil/x86_64/*.S",
-            "libavutil/x86_64/*.asm"
+            "libavutil/x86/*.h",
+            "libavutil/x86/*.c",
+            "libavutil/x86/*.cpp",
+            "libavutil/x86/*.S",
+            "libavutil/x86/*.asm"
         }
 
         -- libavcodec
         files {
-            "libavcodec/x86_64/*.h",
-            "libavcodec/x86_64/*.c",
-            "libavcodec/x86_64/*.cpp",
-            "libavcodec/x86_64/*.S",
-            "libavcodec/x86_64/*.asm"
+            "libavcodec/x86/*.h",
+            "libavcodec/x86/*.c",
+            "libavcodec/x86/*.cpp",
+            "libavcodec/x86/*.S",
+            "libavcodec/x86/*.asm"
         }
 
         -- libavformat
         files {
-            "libavformat/x86_64/*.h",
-            "libavformat/x86_64/*.c",
-            "libavformat/x86_64/*.cpp",
-            "libavformat/x86_64/*.S",
-            "libavformat/x86_64/*.asm"
+            "libavformat/x86/*.h",
+            "libavformat/x86/*.c",
+            "libavformat/x86/*.cpp",
+            "libavformat/x86/*.S",
+            "libavformat/x86/*.asm"
         }
 
     filter "architecture:ARM64"
         -- libavutil
         files {
-            "libavutil/ARM64/*.h",
-            "libavutil/ARM64/*.c",
-            "libavutil/ARM64/*.cpp",
-            "libavutil/ARM64/*.S",
-            "libavutil/ARM64/*.asm"
+            "libavutil/arm/*.h",
+            "libavutil/arm/*.c",
+            "libavutil/arm/*.cpp",
+            "libavutil/arm/*.S",
+            "libavutil/arm/*.asm"
         }
 
         -- libavcodec
         files {
-            "libavcodec/ARM64/*.h",
-            "libavcodec/ARM64/*.c",
-            "libavcodec/ARM64/*.cpp",
-            "libavcodec/ARM64/*.S",
-            "libavcodec/ARM64/*.asm"
+            "libavcodec/arm/*.h",
+            "libavcodec/arm/*.c",
+            "libavcodec/arm/*.cpp",
+            "libavcodec/arm/*.S",
+            "libavcodec/arm/*.asm"
         }
 
         -- libavformat
         files {
-            "libavformat/ARM64/*.h",
-            "libavformat/ARM64/*.c",
-            "libavformat/ARM64/*.cpp",
-            "libavformat/ARM64/*.S",
-            "libavformat/ARM64/*.asm"
+            "libavformat/arm/*.h",
+            "libavformat/arm/*.c",
+            "libavformat/arm/*.cpp",
+            "libavformat/arm/*.S",
+            "libavformat/arm/*.asm"
         }
 
     filter "architecture:aarch64"
@@ -117,7 +131,6 @@ project "ffmpeg"
             "libavformat/aarch64/*.S",
             "libavformat/aarch64/*.asm"
         }
-        
 
     filter "configurations:Debug"
 		runtime "Debug"
